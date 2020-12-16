@@ -4,23 +4,26 @@ var timeDisplay = document.getElementById("time")
 var endScreen = document.getElementById("end-screen")
 var startScreen = document.getElementById("start-screen")
 var questionScreen = document.getElementById("questions")
-var timeRemaining = 25
-
+//var timeRemaining = 0
+var interval 
 
 function startQuiz(){
-var quizTimer = setInterval(function(){
-    timeDisplay.textContent = timeRemaining;
-    timeRemaining --;
-    if(timeRemaining === -1){
-        clearInterval(quizTimer);
-        endScreen.style.display="block";
-    }else {
         startScreen.style.display="none";
         questionScreen.style.display = "block";
-    }
-}, 1000);
+        timeDisplay.textContent=60;
+        quizTimer();
+
 }
 
+function quizTimer(){
+    interval = setInterval(function () {
+    timeDisplay.textContent--;
+    if (parseInt(timeRemaining) === 0) {
+        clearInterval(interval);
+        endQuiz();
+    }
+    } ,1000)
+}
 
 
 

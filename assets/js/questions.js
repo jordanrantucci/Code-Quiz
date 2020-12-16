@@ -113,9 +113,13 @@ function questionFour() {
 }
 
 li1d.addEventListener("click", questionFive)
-
+// add event listers for each choice
+//create another function for wrong choice and correct choice per question set
+//create a function correct question 5 which will add a point and go to next question or action
+//create a function wrong question 5 which will stop interval subtract time 
+//add event listeners for all questions per set that define the behavior 
 function questionFive() {
-    document.getElementById("question-title").innerHTML = "Question 5: What appendChild do?";
+    document.getElementById("question-title").innerHTML = "Question 5: What does appendChild do?";
     document.getElementById("choices").removeChild(listEl4);
     document.getElementById("choices").appendChild(listEl5);
     listEl5.appendChild(li1e);
@@ -127,15 +131,9 @@ function questionFive() {
 li4e.addEventListener("click",endQuiz)
 
 function endQuiz() {
-    if (endScreen.style.display === "none") {
-        endScreen.style.display = "block";
-    } else{
-        questionScreen.style.display = "none";
-    }
-
-
-    //endScreen.style.display = "block";
-    //questionScreen.style.display = "none";
+    clearInterval(interval)
+    endScreen.style.display = "block";
+    questionScreen.style.display = "none";
 }
 
 
