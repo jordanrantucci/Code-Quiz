@@ -18,7 +18,7 @@ function startQuiz(){
 function quizTimer(){
     interval = setInterval(function () {
     timeDisplay.textContent--;
-    if (parseInt(timeRemaining) === 0) {
+    if (parseInt(timeDisplay.textContent) === 0) {
         clearInterval(interval);
         endQuiz();
     }

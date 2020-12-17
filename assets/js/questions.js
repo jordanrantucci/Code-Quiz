@@ -8,6 +8,16 @@ var listEl2 = document.createElement("ol");
 var listEl3 = document.createElement("ol");
 var listEl4 = document.createElement("ol");
 var listEl5 = document.createElement("ol");
+
+// var correctAudio = new Audio(src="./assets/sfx/correct.wav");  trying to figure out how to add audio
+
+// var audio;
+// function setupAudio(){
+//     var audio = new Audio(src="./assets/sfx/correct.wav")
+// }
+
+
+
 //question 1 variables
 var li1a = document.createElement("li");
 var li2a = document.createElement("li");
@@ -75,7 +85,10 @@ function questionOne(){
     listEl1.appendChild(li4a);
 }
 
+li1a.addEventListener("click", wrongAnswer);
+li2a.addEventListener("click", wrongAnswer);
 li3a.addEventListener("click", questionTwo) //when question 1 choice 3 is clicked question 2 appears
+li4a.addEventListener("click", wrongAnswer);
 
 //question 2 function
 function questionTwo(){
@@ -88,7 +101,10 @@ function questionTwo(){
     listEl2.appendChild(li4b);
 }
 
-li2b.addEventListener("click", questionThree) //when question 2 choice 2 is clicked question 3 appears
+li1b.addEventListener("click", wrongAnswer);
+li2b.addEventListener("click", questionThree); // correct answer when question 2 choice 2 is clicked question 3 appears
+li3b.addEventListener("click", wrongAnswer);
+li4b.addEventListener("click", wrongAnswer);
 
 function questionThree() {
     document.getElementById("question-title").innerHTML = "Question 3: What is a function?";
@@ -100,7 +116,10 @@ function questionThree() {
     listEl3.appendChild(li4c);
 }
 
-li3c.addEventListener("click", questionFour)
+li1c.addEventListener("click", wrongAnswer);
+li2c.addEventListener("click", wrongAnswer);
+li3c.addEventListener("click", questionFour); //correct answer
+li4c.addEventListener("click", wrongAnswer);
 
 function questionFour() {
     document.getElementById("question-title").innerHTML = "Question 4: What does DOM mean?";
@@ -112,9 +131,15 @@ function questionFour() {
     listEl4.appendChild(li4d);
 }
 
-li1d.addEventListener("click", questionFive)
+
+li1d.addEventListener("click", questionFive);//correct answer
+li2d.addEventListener("click", wrongAnswer);
+li3d.addEventListener("click", wrongAnswer);
+li4d.addEventListener("click", wrongAnswer);
+
+
 // add event listers for each choice
-//create another function for wrong choice and correct choice per question set
+//create another function for correct choice per question set
 //create a function correct question 5 which will add a point and go to next question or action
 //create a function wrong question 5 which will stop interval subtract time 
 //add event listeners for all questions per set that define the behavior 
@@ -128,7 +153,24 @@ function questionFive() {
     listEl5.appendChild(li4e);
 }
 
+
+li1e.addEventListener("click", wrongAnswer)
+li2e.addEventListener("click", wrongAnswer)
+li3e.addEventListener("click", wrongAnswer)
 li4e.addEventListener("click",endQuiz)
+
+function wrongAnswer() {
+    console.log("Wrong! Try again")
+    let wrongAnswer = document.createElement('p')
+    wrongAnswer.className = "feedback"
+    wrongAnswer.id = "wrongFourAlert"
+    wrongAnswer.textContent = "Wrong! Try Again!"
+    console.log(wrongAnswer)
+    questionScreen.appendChild(wrongAnswer)
+}
+
+
+
 
 function endQuiz() {
     clearInterval(interval)
