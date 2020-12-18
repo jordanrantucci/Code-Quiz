@@ -9,12 +9,13 @@ var listEl3 = document.createElement("ol");
 var listEl4 = document.createElement("ol");
 var listEl5 = document.createElement("ol");
 
-// var correctAudio = new Audio(src="./assets/sfx/correct.wav");  trying to figure out how to add audio
+var correctAudio = new Audio(src="./assets/sfx/correct.wav"); //audio file for correct answer
+    var audio = new Audio(src="./assets/sfx/correct.wav"); 
 
-// var audio;
-// function setupAudio(){
-//     var audio = new Audio(src="./assets/sfx/correct.wav")
-// }
+
+
+var incorrectAudio = new Audio(src="./assets/sfx/incorrect.wav"); //audio file for incorrect answer 
+    var audioI = new Audio(src="./assets/sfx/incorrect.wav");
 
 
 
@@ -44,8 +45,6 @@ var li2e = document.createElement("li");
 var li3e = document.createElement("li");
 var li4e = document.createElement("li");
 
-
-//li1.SetAttribute(correct, "correct")
 
 //Question 1 list elements
 li1a.textContent = "A 'self-contained' module of code that accomplishes a specific task";
@@ -85,13 +84,20 @@ function questionOne(){
     listEl1.appendChild(li4a);
 }
 
-li1a.addEventListener("click", wrongAnswer);
+li1a.addEventListener("click", wrongAnswer);// activates wrong answer function creates text that says "Wrong! Try Again!""
 li2a.addEventListener("click", wrongAnswer);
 li3a.addEventListener("click", questionTwo) //when question 1 choice 3 is clicked question 2 appears
 li4a.addEventListener("click", wrongAnswer);
 
 //question 2 function
 function questionTwo(){
+    correctAudio.play();
+    var correctAnswer = document.createElement('p'); // creates the p HTML element which will display text
+    correctAnswer.className = "feedback";
+    correctAnswer.id = "Correct Alert";
+    correctAnswer.textContent = "Correct!"; //displays the correct text when the answer is correct
+    console.log(correctAnswer);
+    questionScreen.appendChild(correctAnswer);
     document.getElementById("question-title").innerHTML = "Question 2: What is an array?";
     document.getElementById("choices").removeChild(listEl1); // this removes question 1
     document.getElementById("choices").appendChild(listEl2); // this allows question 2 to appear
@@ -107,6 +113,13 @@ li3b.addEventListener("click", wrongAnswer);
 li4b.addEventListener("click", wrongAnswer);
 
 function questionThree() {
+    correctAudio.play();
+    var correctAnswer = document.createElement('p')
+    correctAnswer.className = "feedback"
+    correctAnswer.id = "Correct Alert"
+    correctAnswer.textContent = "Correct!"
+    console.log(correctAnswer)
+    questionScreen.appendChild(correctAnswer)
     document.getElementById("question-title").innerHTML = "Question 3: What is a function?";
     document.getElementById("choices").removeChild(listEl2); // this removes question 2
     document.getElementById("choices").appendChild(listEl3); // question 3 appears
@@ -122,6 +135,13 @@ li3c.addEventListener("click", questionFour); //correct answer
 li4c.addEventListener("click", wrongAnswer);
 
 function questionFour() {
+    correctAudio.play();
+    var correctAnswer = document.createElement('p')
+    correctAnswer.className = "feedback"
+    correctAnswer.id = "Correct Alert"
+    correctAnswer.textContent = "Correct!"
+    console.log(correctAnswer)
+    questionScreen.appendChild(correctAnswer)
     document.getElementById("question-title").innerHTML = "Question 4: What does DOM mean?";
     document.getElementById("choices").removeChild(listEl3);
     document.getElementById("choices").appendChild(listEl4);
@@ -138,12 +158,14 @@ li3d.addEventListener("click", wrongAnswer);
 li4d.addEventListener("click", wrongAnswer);
 
 
-// add event listers for each choice
-//create another function for correct choice per question set
-//create a function correct question 5 which will add a point and go to next question or action
-//create a function wrong question 5 which will stop interval subtract time 
-//add event listeners for all questions per set that define the behavior 
 function questionFive() {
+    correctAudio.play();
+    var correctAnswer = document.createElement('p')
+    correctAnswer.className = "feedback"
+    correctAnswer.id = "Correct Alert"
+    correctAnswer.textContent = "Correct!"
+    console.log(correctAnswer)
+    questionScreen.appendChild(correctAnswer)
     document.getElementById("question-title").innerHTML = "Question 5: What does appendChild do?";
     document.getElementById("choices").removeChild(listEl4);
     document.getElementById("choices").appendChild(listEl5);
@@ -153,7 +175,6 @@ function questionFive() {
     listEl5.appendChild(li4e);
 }
 
-
 li1e.addEventListener("click", wrongAnswer)
 li2e.addEventListener("click", wrongAnswer)
 li3e.addEventListener("click", wrongAnswer)
@@ -161,22 +182,31 @@ li4e.addEventListener("click",endQuiz)
 
 function wrongAnswer() {
     console.log("Wrong! Try again")
-    let wrongAnswer = document.createElement('p')
+    var wrongAnswer = document.createElement('p')
     wrongAnswer.className = "feedback"
-    wrongAnswer.id = "wrongFourAlert"
+    wrongAnswer.id = "wrong Alert"
     wrongAnswer.textContent = "Wrong! Try Again!"
     console.log(wrongAnswer)
     questionScreen.appendChild(wrongAnswer)
+    incorrectAudio.play()
 }
 
-
-
-
 function endQuiz() {
+    correctAudio.play();
+    var correctAnswer = document.createElement('p')
+    correctAnswer.className = "feedback"
+    correctAnswer.id = "Correct Alert"
+    correctAnswer.textContent = "Correct!"
+    console.log(correctAnswer)
+    questionScreen.appendChild(correctAnswer)
     clearInterval(interval)
     endScreen.style.display = "block";
     questionScreen.style.display = "none";
 }
+
+// I still need to add a 10 second penalty to the wrong answer function
+// I still need to add a point to the correct answers and save the score at the end 
+// I ran out of time trying to figure out how to add points and subtract the 10 seconds
 
 
 
