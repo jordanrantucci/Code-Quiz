@@ -7,12 +7,12 @@ Code Quiz
 
 This project is a CWRU Coding Bootcamp homework assignment. The background of this project is to create a simple multiple choice quiz based on coding questions.  The quiz is timed and there should be 10 second penalty for wrong answers and points for correct answers.  After the quiz your final score should be displayed and you should be able to enter your high score and save your initials.  The score and initials should be stored locally.
 
-The purpose of this homework assignment is to test the students knowledge of working with JavaScript and linking it to the HTML and CSS as well.  The JavaScript displays the students ability to set variable, work with arrays, generate....
+The purpose of this homework assignment is to test the students knowledge of working with JavaScript and linking it to the HTML and CSS as well.  The JavaScript displays the students ability to set variable, write functions, create elements, traverse the DOM, store data locally, add event listeners, create on click elements, create buttons, create a countdown clock, have multiple events happen on a click, generate list elements and link multiple JavaScript items.  
 
 
 
 
-Deployed application link: (https://xxx)
+Deployed application link: (https://jordanrantucci.github.io/Code-Quiz/)
 
 
 Screenshot of deployed application:
