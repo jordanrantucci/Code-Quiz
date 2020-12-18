@@ -23,7 +23,7 @@ Screenshot of deployed application:
 ![Alt text](assets/images/Question-2.jpg?raw=true "Question-2")
 ![Alt text](assets/images/Question-3.jpg?raw=true "Question-3")
 ![Alt text](assets/images/Question-4.jpg?raw=true "Question-4")
-![Alt text](assets/images/Question-5.jpg?raw=true "Question-5")
+![Alt text](assets/images/Question-5-Wrong-Answe.jpg?raw=true "Question-5")
 
 ## Table of Contents
 
