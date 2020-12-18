@@ -16,13 +16,13 @@ Deployed application link: (https://xxx)
 
 
 Screenshot of deployed application:
-![Alt text](../assets/images/Code-Quiz-Main-Screen?raw=true "Home-Screen")
-![Alt text](../assets/images/End-Screen?raw=true "End-Screen")
-![Alt text](../assets/images/High-Scores?raw=true "High-Scores")
-![Alt text](../assets/images/Question-1?raw=true "Question-1")
-![Alt text](../assets/images/Question-2?raw=true "Question-2")
-![Alt text](../assets/images/Question-3?raw=true "Question-3")
-![Alt text](../assets/images/Question-4?raw=true "Question-4")
+![Alt text](/assets/images/Code-Quiz-Main-Screen?raw=true "Home-Screen")
+![Alt text](/assets/images/End-Screen?raw=true "End-Screen")
+![Alt text](./assets/images/High-Scores?raw=true "High-Scores")
+![Alt text](/assets/images/Question-1?raw=true "Question-1")
+![Alt text](/assets/images/Question-2?raw=true "Question-2")
+![Alt text](/assets/images/Question-3?raw=true "Question-3")
+![Alt text](../images/Question-4?raw=true "Question-4")
 ![Alt text](../assets/images/Question-5?raw=true "Question-5")
 
 ## Table of Contents
